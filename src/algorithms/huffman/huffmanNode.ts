@@ -1,18 +1,17 @@
 export class HuffmanNode {
-  character: string;
-  Frequency: number;
+  frequency: number;
+  symbol?: number;
   left: HuffmanNode | null;
   right: HuffmanNode | null;
-  constructor(char: string = "", freq: number = 0) {
-    this.Frequency = freq;
-    this.character = char;
-    this.left = null;
-    this.right = null;
+
+  constructor(frequency: number, symbol?: number, left: HuffmanNode | null = null, right: HuffmanNode | null = null) {
+    this.frequency = frequency;
+    this.symbol = symbol;
+    this.left = left;
+    this.right = right;
   }
-  CompareTo(otherNode: HuffmanNode): number {
-    return this.Frequency - otherNode.Frequency;
-  }
+
   isLeaf(): boolean {
-    return this.left == null && this.right == null;
+    return this.left === null && this.right === null;
   }
 }
